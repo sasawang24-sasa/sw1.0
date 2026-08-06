@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>退换货政策 | 思迈威 Smart Wellness</title>
+<meta name="description" content="思迈威 Smart Wellness 退换货政策，说明退货申请条件、期限、流程与运费说明。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 24'%3E%3Cpath d='M1 14C4 8 7 8 10 14C13 20 16 20 19 14C22 8 25 8 28 14' stroke='%232fae9e' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M10 8C13 13 16 13 19 8C22 3 25 3 28 8' stroke='%230f3d3e' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --teal-900:#0f3d3e;
+    --teal-700:#136b64;
+    --teal-500:#2fae9e;
+    --teal-300:#7fd6c4;
+    --teal-100:#e3f4ef;
+    --bg-mist:#eef4f2;
+    --ink:#12241f;
+    --ink-soft:#5b6b66;
+    --line:#e1e9e6;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --shadow-soft:0 14px 34px -14px rgba(15,61,62,0.22);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg-mist); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  img,svg{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+
+  /* header (shared) */
+  header{background:rgba(238,244,242,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:60;}
+  .header-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 32px; max-width:1240px; margin:0 auto;}
+  .logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem; letter-spacing:-0.01em;}
+  .logo svg{flex-shrink:0;}
+  .logo-text{display:flex; flex-direction:column; line-height:1.15;}
+  .logo-text .logo-main{font-size:.85em; color:var(--teal-700);}
+  .logo-text small{font-size:.62rem; font-weight:600; color:var(--ink); letter-spacing:.03em;}
+  .header-icons{display:flex; align-items:center; gap:10px;}
+  .icon-btn{width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:1px solid var(--line); background:#fff; transition:.2s;}
+  .icon-btn:hover{background:var(--teal-100); border-color:var(--teal-300);}
+  .icon-btn[aria-expanded="true"]{background:var(--teal-500); border-color:var(--teal-500); color:#fff;}
+  .mobile-menu{display:none; max-width:1240px; margin:0 auto; padding:0 32px 18px; flex-direction:column; gap:2px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:12px 6px; border-bottom:1px solid var(--line); font-size:.92rem; font-weight:600;}
+
+  /* breadcrumb / back link */
+  .back-link{
+    max-width:760px; margin:28px auto 0; padding:0 32px;
+    display:flex;
+  }
+  .back-link a{
+    display:inline-flex; align-items:center; gap:6px; font-size:.85rem; font-weight:600;
+    color:var(--teal-700); padding:8px 4px;
+  }
+  .back-link a:hover{color:var(--teal-900);}
+
+  /* article */
+  .article{max-width:760px; margin:0 auto; padding:24px 32px 90px;}
+  .article-hero{margin-bottom:44px; padding-bottom:28px; border-bottom:1px solid var(--line);}
+  .article-hero .eyebrow{font-size:.78rem; font-weight:700; letter-spacing:.06em; color:var(--teal-500); text-transform:uppercase; margin-bottom:10px;}
+  .article-hero h1{font-size:2.1rem; font-weight:800; color:var(--teal-900); letter-spacing:-0.01em; margin-bottom:12px; line-height:1.3;}
+  .article-hero .meta{font-size:.85rem; color:var(--ink-soft);}
+  .article-body h2{font-size:1.18rem; font-weight:800; color:var(--teal-900); margin:38px 0 12px;}
+  .article-body h2:first-child{margin-top:0;}
+  .article-body h3{font-size:1rem; font-weight:700; color:var(--teal-700); margin:20px 0 8px;}
+  .article-body p{font-size:.98rem; color:var(--ink); line-height:1.9; margin-bottom:14px;}
+  .article-body p.lead{font-size:1.02rem; color:var(--ink-soft); line-height:1.9;}
+  .article-body ul{margin:0 0 16px 0; padding-left:0; list-style:none;}
+  .article-body li{font-size:.96rem; color:var(--ink); line-height:1.85; padding-left:20px; position:relative; margin-bottom:7px;}
+  .article-body li::before{content:""; position:absolute; left:2px; top:11px; width:5px; height:5px; border-radius:50%; background:var(--teal-500);}
+  .article-body strong{color:var(--teal-900);}
+  .article-contact{margin-top:44px; padding:26px 30px; background:var(--teal-100); border-radius:var(--radius-md);}
+  .article-contact p{margin-bottom:6px; font-size:.92rem; color:var(--ink);}
+  .article-contact p:last-child{margin-bottom:0;}
+  .article-contact a{color:var(--teal-700); font-weight:600;}
+
+  /* brand story specifics */
+  .value-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:18px 0 28px;}
+  .value-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:20px 22px;}
+  .value-card h4{font-size:.95rem; font-weight:800; color:var(--teal-900); margin-bottom:6px;}
+  .value-card p{font-size:.86rem; color:var(--ink-soft); line-height:1.7; margin-bottom:0;}
+  .manifesto{
+    background:linear-gradient(160deg, var(--teal-100), #fff);
+    border-radius:var(--radius-lg); padding:36px 34px; margin:32px 0;
+  }
+  .manifesto p{font-size:1rem; color:var(--teal-900); line-height:2; margin-bottom:0;}
+  .brand-tagline{text-align:center; margin:8px 0 0;}
+  .brand-tagline .cn{font-size:1.3rem; font-weight:800; color:var(--teal-900);}
+  .brand-tagline .zh-sub{font-size:.95rem; color:var(--ink-soft); margin-top:4px;}
+  .brand-tagline .en{font-size:.82rem; color:var(--ink-soft); opacity:.8; margin-top:2px;}
+
+  /* footer (shared) */
+  footer{max-width:1240px; margin:60px auto 0; padding:64px 32px 32px;}
+  .footer-top{display:grid; grid-template-columns:1.4fr repeat(4,1fr); gap:24px; padding-bottom:36px;}
+  .footer-brand .logo{margin-bottom:10px;}
+  .footer-brand p{font-size:.82rem; color:var(--ink-soft);}
+  .footer-brand p.en{font-size:.74rem; margin-top:2px; opacity:.75;}
+  .footer-col h6{font-size:.82rem; font-weight:800; margin-bottom:14px;}
+  .footer-col a{display:block; font-size:.82rem; color:var(--ink-soft); margin-bottom:10px; transition:.2s;}
+  .footer-col a:hover{color:var(--teal-700);}
+  .footer-bottom{border-top:1px solid var(--line); padding-top:24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;}
+  .footer-bottom p{font-size:.78rem; color:var(--ink-soft);}
+  .socials{display:flex; gap:10px;}
+  .socials a{width:36px; height:36px; border-radius:50%; background:var(--teal-100); display:flex; align-items:center; justify-content:center; transition:.2s;}
+  .socials a:hover{background:var(--teal-500); color:#fff;}
+
+  :focus-visible{outline:2px solid var(--teal-500); outline-offset:2px;}
+
+  @media (max-width:640px){
+    .header-inner{padding:14px 18px;}
+    .back-link{padding:0 18px;}
+    .article{padding:20px 18px 70px;}
+    .article-hero h1{font-size:1.6rem;}
+    .value-grid{grid-template-columns:1fr;}
+    .manifesto{padding:26px 22px;}
+    footer{padding:48px 18px 28px;}
+    .footer-top{grid-template-columns:1fr 1fr; gap:28px 16px;}
+    .footer-bottom{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg width="30" height="24" viewBox="0 0 30 24" fill="none">
+        <path d="M1 14C4 8 7 8 10 14C13 20 16 20 19 14C22 8 25 8 28 14" stroke="#2fae9e" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M10 8C13 13 16 13 19 8C22 3 25 3 28 8" stroke="#0f3d3e" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text"><span class="logo-main">思迈威</span><small>Smart Wellness</small></span>
+    </a>
+    <div class="header-icons">
+      <button class="icon-btn" aria-label="菜单" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html#learn">学习 Learn</a>
+    <a href="index.html#gear">装备 Gear</a>
+    <a href="index.html#tools">工具 Tools</a>
+    <a href="index.html#articles">文章 Articles</a>
+    <a href="index.html#newsletter">订阅 Subscribe</a>
+  </nav>
+</header>
+
+<div class="back-link">
+  <a href="index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    返回首页
+  </a>
+</div>
+
+<main class="article">
+  <div class="article-hero">
+    <p class="eyebrow">Return &amp; Exchange Policy</p>
+    <h1>退换货政策</h1>
+    <p class="meta">生效日期：2026年08月01日</p>
+  </div>
+  <div class="article-body">
+    <p class="lead">思迈威 SMART WELLNESS 致力于为用户提供高品质的运动装备和健康产品。</p>
+    <p class="lead">为了保障用户权益，同时确保产品质量与服务标准，我们制定以下退换货政策。</p>
+    <h2>一、适用范围</h2>
+    <p>本政策适用于通过 思迈威 SMART WELLNESS 官方网站、官方商城及授权渠道购买的商品。</p>
+    <p>不同商品可能因产品性质不同，适用不同的退换货规则，具体以商品页面说明为准。</p>
+    <h2>二、退货申请条件</h2>
+    <p>用户在收到商品后，如符合以下条件，可以申请退货：</p>
+    <ul>
+      <li>商品在规定退货期限内</li>
+      <li>商品未经使用，不影响二次销售</li>
+      <li>商品包装、配件、说明书及赠品完整</li>
+      <li>商品不存在人为损坏</li>
+    </ul>
+    <p>建议用户收到商品后及时检查产品状态。</p>
+    <h2>三、退货期限</h2>
+    <p>除特殊商品外：用户可在收到商品后的 48 小时内提交退货申请。</p>
+    <p>超过退货期限，如商品存在质量问题，我们将根据实际情况提供售后处理方案。</p>
+    <h2>四、不支持退货的情况</h2>
+    <p>以下情况可能无法办理退货：</p>
+    <ul>
+      <li>商品已使用并影响再次销售</li>
+      <li>商品存在人为损坏</li>
+      <li>缺少包装、配件或赠品</li>
+      <li>超过退货申请期限</li>
+      <li>根据商品性质不适合退货的产品</li>
+    </ul>
+    <p>例如：已拆封使用的个人健康用品、定制类商品，或因卫生原因不适合再次销售的商品。</p>
+    <h2>五、换货政策</h2>
+    <p>如商品存在以下情况，用户可以申请换货：</p>
+    <ul>
+      <li>收到商品与订单不符</li>
+      <li>商品存在质量问题</li>
+      <li>运输过程中造成损坏</li>
+    </ul>
+    <p>换货申请需提供：订单信息、商品照片或相关证明、问题说明。审核通过后，我们将安排换货流程。</p>
+    <h2>六、退款方式</h2>
+    <p>退货审核通过并收到商品后，我们将在合理时间内处理退款。退款金额：</p>
+    <ul>
+      <li>商品费用按照实际支付金额退还</li>
+      <li>运费根据具体情况处理</li>
+    </ul>
+    <p>退款时间可能因支付方式和银行处理流程有所不同。</p>
+    <h2>七、质量问题处理</h2>
+    <p>如果商品存在质量问题，请在收到商品后及时联系我们。思迈威 SMART WELLNESS 将根据具体情况提供：</p>
+    <ul>
+      <li>免费维修</li>
+      <li>更换产品</li>
+      <li>退款处理</li>
+      <li>其他合理解决方案</li>
+    </ul>
+    <p>我们会尽力确保每一位用户获得满意的购物体验。</p>
+    <h2>八、退换货流程</h2>
+    <p>申请退换货：</p>
+    <ul>
+      <li>联系 思迈威 SMART WELLNESS 客服</li>
+      <li>提供订单信息及问题说明</li>
+      <li>等待审核确认</li>
+      <li>按指引寄回商品</li>
+      <li>完成退款或换货</li>
+    </ul>
+    <p>未经确认直接寄回商品，可能导致处理延迟。</p>
+    <h2>九、运费说明</h2>
+    <p>因用户个人原因产生的退货：退回运费通常由用户承担。</p>
+    <p>因以下原因产生的退换货，相关费用由 思迈威 SMART WELLNESS 承担：</p>
+    <ul>
+      <li>商品质量问题</li>
+      <li>发错商品</li>
+      <li>运输损坏</li>
+    </ul>
+    <h2>十、政策更新</h2>
+    <p>思迈威 SMART WELLNESS 有权根据业务发展、法律法规及服务需求调整本政策。</p>
+    <p>更新后的政策将在官方网站公布，并注明生效日期。</p>
+    <h2>十一、联系我们</h2>
+    <p>如您需要申请退换货或咨询售后服务，请联系我们：</p>
+    <div class="article-contact">
+      <p>品牌名称：思迈威 SMART WELLNESS</p>
+      <p>官方网站：<a href="https://www.smartwellness.com.cn">www.smartwellness.com.cn</a></p>
+    </div>
+
+  </div>
+</main>
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo" style="font-size:1.05rem;">
+        <svg width="26" height="20" viewBox="0 0 30 24" fill="none">
+          <path d="M1 14C4 8 7 8 10 14C13 20 16 20 19 14C22 8 25 8 28 14" stroke="#2fae9e" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M10 8C13 13 16 13 19 8C22 3 25 3 28 8" stroke="#0f3d3e" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text"><span class="logo-main">思迈威</span><small>Smart Wellness</small></span>
+      </div>
+      <p>你的智慧健康向导</p>
+      <p class="en">Your Smart Wellness Guide</p>
+    </div>
+    <div class="footer-col">
+      <h6>学习 Learn</h6>
+      <a href="index.html#learn">训练</a><a href="index.html#learn">营养</a><a href="index.html#learn">恢复</a><a href="index.html#learn">跑步</a><a href="index.html#learn">新手指南</a>
+    </div>
+    <div class="footer-col">
+      <h6>装备 Gear</h6>
+      <a href="index.html#gear">智能手表</a><a href="index.html#gear">耳机</a><a href="index.html#gear">恢复装备</a><a href="index.html#gear">营养补剂</a><a href="index.html#gear">全部装备</a>
+    </div>
+    <div class="footer-col">
+      <h6>工具 Tools</h6>
+      <a href="index.html#tools">计算器</a><a href="index.html#tools">规划工具</a><a href="index.html#tools">追踪工具</a><a href="index.html#tools">使用指南</a>
+    </div>
+    <div class="footer-col">
+      <h6>关于我们 About</h6>
+      <a href="brand-story.html">品牌故事</a><a href="privacy-policy.html">隐私政策</a><a href="health-disclaimer.html">健康免责声明</a><a href="return-policy.html">退换货政策</a><a href="terms-of-service.html">服务条款</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 思迈威 Smart Wellness. 保留所有权利。</p>
+    <div class="socials">
+      <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#136b64" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="#136b64" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="#136b64"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="4" stroke="#136b64" stroke-width="1.8"/><path d="M10 9l6 3-6 3V9Z" fill="#136b64"/></svg></a>
+      <a href="#" aria-label="微博"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#136b64" stroke-width="1.8"/><path d="M9 17c1-3 1-6 1-6a3 3 0 1 1 5 2c0 2-1 4-3 4-1 0-1.5-.5-1.5-.5" stroke="#136b64" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+      <a href="#" aria-label="邮箱"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#136b64" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="#136b64" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', function(){
+    const open = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+
+</body>
+</html>

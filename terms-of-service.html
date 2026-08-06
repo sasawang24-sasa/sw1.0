@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服务条款 | 思迈威 Smart Wellness</title>
+<meta name="description" content="思迈威 Smart Wellness 服务条款，规定您与我们之间关于使用本平台及相关服务的权利和义务。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 24'%3E%3Cpath d='M1 14C4 8 7 8 10 14C13 20 16 20 19 14C22 8 25 8 28 14' stroke='%232fae9e' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M10 8C13 13 16 13 19 8C22 3 25 3 28 8' stroke='%230f3d3e' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --teal-900:#0f3d3e;
+    --teal-700:#136b64;
+    --teal-500:#2fae9e;
+    --teal-300:#7fd6c4;
+    --teal-100:#e3f4ef;
+    --bg-mist:#eef4f2;
+    --ink:#12241f;
+    --ink-soft:#5b6b66;
+    --line:#e1e9e6;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --shadow-soft:0 14px 34px -14px rgba(15,61,62,0.22);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg-mist); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  img,svg{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+
+  /* header (shared) */
+  header{background:rgba(238,244,242,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:60;}
+  .header-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 32px; max-width:1240px; margin:0 auto;}
+  .logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem; letter-spacing:-0.01em;}
+  .logo svg{flex-shrink:0;}
+  .logo-text{display:flex; flex-direction:column; line-height:1.15;}
+  .logo-text .logo-main{font-size:.85em; color:var(--teal-700);}
+  .logo-text small{font-size:.62rem; font-weight:600; color:var(--ink); letter-spacing:.03em;}
+  .header-icons{display:flex; align-items:center; gap:10px;}
+  .icon-btn{width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:1px solid var(--line); background:#fff; transition:.2s;}
+  .icon-btn:hover{background:var(--teal-100); border-color:var(--teal-300);}
+  .icon-btn[aria-expanded="true"]{background:var(--teal-500); border-color:var(--teal-500); color:#fff;}
+  .mobile-menu{display:none; max-width:1240px; margin:0 auto; padding:0 32px 18px; flex-direction:column; gap:2px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:12px 6px; border-bottom:1px solid var(--line); font-size:.92rem; font-weight:600;}
+
+  /* breadcrumb / back link */
+  .back-link{
+    max-width:760px; margin:28px auto 0; padding:0 32px;
+    display:flex;
+  }
+  .back-link a{
+    display:inline-flex; align-items:center; gap:6px; font-size:.85rem; font-weight:600;
+    color:var(--teal-700); padding:8px 4px;
+  }
+  .back-link a:hover{color:var(--teal-900);}
+
+  /* article */
+  .article{max-width:760px; margin:0 auto; padding:24px 32px 90px;}
+  .article-hero{margin-bottom:44px; padding-bottom:28px; border-bottom:1px solid var(--line);}
+  .article-hero .eyebrow{font-size:.78rem; font-weight:700; letter-spacing:.06em; color:var(--teal-500); text-transform:uppercase; margin-bottom:10px;}
+  .article-hero h1{font-size:2.1rem; font-weight:800; color:var(--teal-900); letter-spacing:-0.01em; margin-bottom:12px; line-height:1.3;}
+  .article-hero .meta{font-size:.85rem; color:var(--ink-soft);}
+  .article-body h2{font-size:1.18rem; font-weight:800; color:var(--teal-900); margin:38px 0 12px;}
+  .article-body h2:first-child{margin-top:0;}
+  .article-body h3{font-size:1rem; font-weight:700; color:var(--teal-700); margin:20px 0 8px;}
+  .article-body p{font-size:.98rem; color:var(--ink); line-height:1.9; margin-bottom:14px;}
+  .article-body p.lead{font-size:1.02rem; color:var(--ink-soft); line-height:1.9;}
+  .article-body ul{margin:0 0 16px 0; padding-left:0; list-style:none;}
+  .article-body li{font-size:.96rem; color:var(--ink); line-height:1.85; padding-left:20px; position:relative; margin-bottom:7px;}
+  .article-body li::before{content:""; position:absolute; left:2px; top:11px; width:5px; height:5px; border-radius:50%; background:var(--teal-500);}
+  .article-body strong{color:var(--teal-900);}
+  .article-contact{margin-top:44px; padding:26px 30px; background:var(--teal-100); border-radius:var(--radius-md);}
+  .article-contact p{margin-bottom:6px; font-size:.92rem; color:var(--ink);}
+  .article-contact p:last-child{margin-bottom:0;}
+  .article-contact a{color:var(--teal-700); font-weight:600;}
+
+  /* brand story specifics */
+  .value-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:18px 0 28px;}
+  .value-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:20px 22px;}
+  .value-card h4{font-size:.95rem; font-weight:800; color:var(--teal-900); margin-bottom:6px;}
+  .value-card p{font-size:.86rem; color:var(--ink-soft); line-height:1.7; margin-bottom:0;}
+  .manifesto{
+    background:linear-gradient(160deg, var(--teal-100), #fff);
+    border-radius:var(--radius-lg); padding:36px 34px; margin:32px 0;
+  }
+  .manifesto p{font-size:1rem; color:var(--teal-900); line-height:2; margin-bottom:0;}
+  .brand-tagline{text-align:center; margin:8px 0 0;}
+  .brand-tagline .cn{font-size:1.3rem; font-weight:800; color:var(--teal-900);}
+  .brand-tagline .zh-sub{font-size:.95rem; color:var(--ink-soft); margin-top:4px;}
+  .brand-tagline .en{font-size:.82rem; color:var(--ink-soft); opacity:.8; margin-top:2px;}
+
+  /* footer (shared) */
+  footer{max-width:1240px; margin:60px auto 0; padding:64px 32px 32px;}
+  .footer-top{display:grid; grid-template-columns:1.4fr repeat(4,1fr); gap:24px; padding-bottom:36px;}
+  .footer-brand .logo{margin-bottom:10px;}
+  .footer-brand p{font-size:.82rem; color:var(--ink-soft);}
+  .footer-brand p.en{font-size:.74rem; margin-top:2px; opacity:.75;}
+  .footer-col h6{font-size:.82rem; font-weight:800; margin-bottom:14px;}
+  .footer-col a{display:block; font-size:.82rem; color:var(--ink-soft); margin-bottom:10px; transition:.2s;}
+  .footer-col a:hover{color:var(--teal-700);}
+  .footer-bottom{border-top:1px solid var(--line); padding-top:24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;}
+  .footer-bottom p{font-size:.78rem; color:var(--ink-soft);}
+  .socials{display:flex; gap:10px;}
+  .socials a{width:36px; height:36px; border-radius:50%; background:var(--teal-100); display:flex; align-items:center; justify-content:center; transition:.2s;}
+  .socials a:hover{background:var(--teal-500); color:#fff;}
+
+  :focus-visible{outline:2px solid var(--teal-500); outline-offset:2px;}
+
+  @media (max-width:640px){
+    .header-inner{padding:14px 18px;}
+    .back-link{padding:0 18px;}
+    .article{padding:20px 18px 70px;}
+    .article-hero h1{font-size:1.6rem;}
+    .value-grid{grid-template-columns:1fr;}
+    .manifesto{padding:26px 22px;}
+    footer{padding:48px 18px 28px;}
+    .footer-top{grid-template-columns:1fr 1fr; gap:28px 16px;}
+    .footer-bottom{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg width="30" height="24" viewBox="0 0 30 24" fill="none">
+        <path d="M1 14C4 8 7 8 10 14C13 20 16 20 19 14C22 8 25 8 28 14" stroke="#2fae9e" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M10 8C13 13 16 13 19 8C22 3 25 3 28 8" stroke="#0f3d3e" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text"><span class="logo-main">思迈威</span><small>Smart Wellness</small></span>
+    </a>
+    <div class="header-icons">
+      <button class="icon-btn" aria-label="菜单" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html#learn">学习 Learn</a>
+    <a href="index.html#gear">装备 Gear</a>
+    <a href="index.html#tools">工具 Tools</a>
+    <a href="index.html#articles">文章 Articles</a>
+    <a href="index.html#newsletter">订阅 Subscribe</a>
+  </nav>
+</header>
+
+<div class="back-link">
+  <a href="index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    返回首页
+  </a>
+</div>
+
+<main class="article">
+  <div class="article-hero">
+    <p class="eyebrow">Terms of Service</p>
+    <h1>服务条款</h1>
+    <p class="meta">生效日期：2026年08月01日</p>
+  </div>
+  <div class="article-body">
+    <p class="lead">欢迎使用 思迈威 SMART WELLNESS 提供的网站、在线课程、健康内容、产品服务及相关平台。</p>
+    <p class="lead">本服务条款（以下简称“条款”）规定您与 思迈威 SMART WELLNESS 之间关于使用本平台及相关服务的权利和义务。</p>
+    <p class="lead">当您访问、注册或使用我们的服务时，即表示您已阅读、理解并同意接受本条款。</p>
+    <h2>一、服务说明</h2>
+    <p>思迈威 SMART WELLNESS 致力于提供科学运动教育、健康知识分享、运动装备及相关产品服务。</p>
+    <p>我们的服务包括但不限于：</p>
+    <ul>
+      <li>免费运动课程</li>
+      <li>健身训练内容</li>
+      <li>营养与健康知识</li>
+      <li>运动产品销售</li>
+      <li>用户社区及互动服务</li>
+    </ul>
+    <p>我们将持续优化服务内容，但有权根据业务发展调整、升级或暂停部分服务。</p>
+    <h2>二、用户账户</h2>
+    <p>部分服务可能需要您注册账户。您需要：</p>
+    <ul>
+      <li>提供真实、准确的信息</li>
+      <li>妥善保管账户信息</li>
+      <li>对账户下的所有活动负责</li>
+    </ul>
+    <p>如发现账户存在未经授权使用、安全风险或违反本条款的行为，请及时联系我们。</p>
+    <p>您不得：</p>
+    <ul>
+      <li>冒用他人身份注册账户</li>
+      <li>使用虚假信息</li>
+      <li>转让或出售账户</li>
+      <li>通过非法方式访问平台</li>
+    </ul>
+    <h2>三、课程与健康内容使用</h2>
+    <p>思迈威 SMART WELLNESS 提供的课程、文章、视频及健康内容仅用于个人学习和健康管理。</p>
+    <p>用户可以：</p>
+    <ul>
+      <li>学习课程内容</li>
+      <li>根据自身情况进行训练</li>
+      <li>分享个人体验</li>
+    </ul>
+    <p>未经授权，您不得：</p>
+    <ul>
+      <li>复制、出售或商业使用课程内容</li>
+      <li>下载、传播受版权保护的视频或资料</li>
+      <li>冒用 思迈威 SMART WELLNESS 名义发布内容</li>
+    </ul>
+    <p>具体健康内容不构成医疗建议，请同时参考《健康免责声明》。</p>
+    <h2>四、产品购买与交易</h2>
+    <p>通过思迈威 SMART WELLNESS 平台购买产品时，用户应提供准确的订单信息，包括：</p>
+    <ul>
+      <li>收货信息</li>
+      <li>联系方式</li>
+      <li>支付信息</li>
+    </ul>
+    <p>我们将按照订单信息提供产品配送和售后服务。由于以下情况造成的影响，我们不承担责任：</p>
+    <ul>
+      <li>用户提供错误收货信息</li>
+      <li>不可抗力因素导致配送延迟</li>
+      <li>用户不当使用产品</li>
+    </ul>
+    <p>产品质量、退换货及售后规则按照平台公布的相关政策执行。</p>
+    <h2>五、知识产权</h2>
+    <p>思迈威 SMART WELLNESS 平台中的所有内容，包括但不限于：</p>
+    <ul>
+      <li>品牌名称</li>
+      <li>Logo</li>
+      <li>文字内容</li>
+      <li>图片</li>
+      <li>视频</li>
+      <li>课程资料</li>
+      <li>网站设计</li>
+    </ul>
+    <p>均属于 思迈威 SMART WELLNESS 或相关权利人的合法资产。</p>
+    <p>未经书面许可，任何个人或组织不得复制、修改、传播或用于商业用途。</p>
+    <h2>六、用户行为规范</h2>
+    <p>用户使用服务时，应遵守法律法规，不得：</p>
+    <ul>
+      <li>发布违法、有害或侵权内容</li>
+      <li>恶意攻击网站系统</li>
+      <li>干扰平台正常运营</li>
+      <li>侵犯他人隐私或权益</li>
+      <li>利用平台进行商业欺诈活动</li>
+    </ul>
+    <p>如用户违反相关规定，思迈威 SMART WELLNESS 有权限制或终止其使用服务。</p>
+    <h2>七、第三方服务</h2>
+    <p>平台可能包含第三方服务或链接。这些第三方服务由独立主体提供，思迈威 SMART WELLNESS 不对其内容、服务质量或隐私政策承担责任。</p>
+    <p>用户使用第三方服务时，应遵守其相关规则。</p>
+    <h2>八、责任限制</h2>
+    <p>思迈威 SMART WELLNESS 将尽合理努力提供准确、有价值的内容和稳定的服务。但由于：</p>
+    <ul>
+      <li>网络环境变化</li>
+      <li>技术故障</li>
+      <li>第三方服务问题</li>
+      <li>用户个人身体情况差异</li>
+    </ul>
+    <p>可能导致服务中断或实际效果差异。思迈威 SMART WELLNESS 不保证所有课程、训练方法或产品一定达到特定身体效果。</p>
+    <h2>九、服务调整与终止</h2>
+    <p>思迈威 SMART WELLNESS 有权根据运营需要：</p>
+    <ul>
+      <li>更新服务内容</li>
+      <li>修改功能</li>
+      <li>暂停部分服务</li>
+      <li>终止部分业务</li>
+    </ul>
+    <p>如发生重大变化，我们将在合理范围内提前通知用户。</p>
+    <h2>十、条款更新</h2>
+    <p>我们可能根据法律法规、业务发展或服务变化更新本条款。更新后的条款将在平台公布，并注明生效日期。</p>
+    <p>继续使用服务，即表示您接受更新后的条款。</p>
+    <h2>十一、联系我们</h2>
+    <p>如您对本服务条款有任何问题，请联系我们：</p>
+    <div class="article-contact">
+      <p>品牌名称：思迈威 SMART WELLNESS</p>
+      <p>官方网站：<a href="https://www.smartwellness.com.cn">www.smartwellness.com.cn</a></p>
+    </div>
+
+  </div>
+</main>
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo" style="font-size:1.05rem;">
+        <svg width="26" height="20" viewBox="0 0 30 24" fill="none">
+          <path d="M1 14C4 8 7 8 10 14C13 20 16 20 19 14C22 8 25 8 28 14" stroke="#2fae9e" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M10 8C13 13 16 13 19 8C22 3 25 3 28 8" stroke="#0f3d3e" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text"><span class="logo-main">思迈威</span><small>Smart Wellness</small></span>
+      </div>
+      <p>你的智慧健康向导</p>
+      <p class="en">Your Smart Wellness Guide</p>
+    </div>
+    <div class="footer-col">
+      <h6>学习 Learn</h6>
+      <a href="index.html#learn">训练</a><a href="index.html#learn">营养</a><a href="index.html#learn">恢复</a><a href="index.html#learn">跑步</a><a href="index.html#learn">新手指南</a>
+    </div>
+    <div class="footer-col">
+      <h6>装备 Gear</h6>
+      <a href="index.html#gear">智能手表</a><a href="index.html#gear">耳机</a><a href="index.html#gear">恢复装备</a><a href="index.html#gear">营养补剂</a><a href="index.html#gear">全部装备</a>
+    </div>
+    <div class="footer-col">
+      <h6>工具 Tools</h6>
+      <a href="index.html#tools">计算器</a><a href="index.html#tools">规划工具</a><a href="index.html#tools">追踪工具</a><a href="index.html#tools">使用指南</a>
+    </div>
+    <div class="footer-col">
+      <h6>关于我们 About</h6>
+      <a href="brand-story.html">品牌故事</a><a href="privacy-policy.html">隐私政策</a><a href="health-disclaimer.html">健康免责声明</a><a href="return-policy.html">退换货政策</a><a href="terms-of-service.html">服务条款</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 思迈威 Smart Wellness. 保留所有权利。</p>
+    <div class="socials">
+      <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#136b64" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="#136b64" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="#136b64"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="4" stroke="#136b64" stroke-width="1.8"/><path d="M10 9l6 3-6 3V9Z" fill="#136b64"/></svg></a>
+      <a href="#" aria-label="微博"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#136b64" stroke-width="1.8"/><path d="M9 17c1-3 1-6 1-6a3 3 0 1 1 5 2c0 2-1 4-3 4-1 0-1.5-.5-1.5-.5" stroke="#136b64" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+      <a href="#" aria-label="邮箱"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#136b64" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="#136b64" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', function(){
+    const open = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+
+</body>
+</html>
