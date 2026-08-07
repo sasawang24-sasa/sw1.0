@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>品牌故事 | 思迈威 Smart Wellness</title>
-<meta name="description" content="思迈威 Smart Wellness 品牌故事 —— 源自美国佛罗里达的科学健康品牌，我们的使命、愿景与价值观。">
+<title>追踪工具 | 思迈威 Smart Wellness</title>
+<meta name="description" content="思迈威 Smart Wellness 提供的训练与身体数据追踪指南，帮你科学记录训练日志、身体数据和饮食情况。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 24'%3E%3Cpath d='M1 14C4 8 7 8 10 14C13 20 16 20 19 14C22 8 25 8 28 14' stroke='%232fae9e' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M10 8C13 13 16 13 19 8C22 3 25 3 28 8' stroke='%230f3d3e' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -122,7 +122,84 @@
     .footer-top{grid-template-columns:1fr 1fr; gap:28px 16px;}
     .footer-bottom{flex-direction:column; align-items:flex-start;}
   }
+
+  /* calculator-specific */
+  .tool-hero{margin-bottom:36px; padding-bottom:26px; border-bottom:1px solid var(--line);}
+  .tool-hero .eyebrow{font-size:.78rem; font-weight:700; letter-spacing:.06em; color:var(--teal-500); text-transform:uppercase; margin-bottom:10px;}
+  .tool-hero h1{font-size:1.9rem; font-weight:800; color:var(--teal-900); letter-spacing:-0.01em; margin-bottom:10px; line-height:1.3;}
+  .tool-hero p{font-size:.95rem; color:var(--ink-soft); line-height:1.75; max-width:600px;}
+
+  .calc-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:30px 30px 26px; box-shadow:var(--shadow-soft);}
+  .calc-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px 16px;}
+  .field{display:flex; flex-direction:column; gap:6px;}
+  .field.full{grid-column:1 / -1;}
+  .field label{font-size:.82rem; font-weight:700; color:var(--teal-900);}
+  .field .hint{font-size:.74rem; color:var(--ink-soft); font-weight:400; margin-top:-2px;}
+  .field input, .field select{
+    border:1px solid var(--line); border-radius:10px; padding:11px 14px;
+    font-size:.92rem; font-family:inherit; color:var(--ink); background:#fbfdfc;
+    outline:none; transition:.2s;
+  }
+  .field input:focus, .field select:focus{border-color:var(--teal-500); background:#fff;}
+  .radio-group{display:flex; gap:8px; flex-wrap:wrap;}
+  .radio-group label{
+    display:flex; align-items:center; gap:6px; font-size:.86rem; font-weight:600; color:var(--ink);
+    border:1px solid var(--line); border-radius:100px; padding:8px 16px; cursor:pointer; transition:.2s;
+  }
+  .radio-group input{accent-color:var(--teal-500); margin:0;}
+  .radio-group label:has(input:checked){background:var(--teal-100); border-color:var(--teal-500); color:var(--teal-900);}
+
+  .calc-btn{
+    margin-top:24px; width:100%; padding:14px; border:none; border-radius:100px;
+    background:var(--teal-500); color:#fff; font-size:.98rem; font-weight:700;
+    cursor:pointer; transition:.2s;
+  }
+  .calc-btn:hover{background:var(--teal-700);}
+
+  .result-card{
+    margin-top:22px; padding:26px 28px; border-radius:var(--radius-md);
+    background:linear-gradient(160deg, var(--teal-100), #fff);
+    border:1px solid var(--teal-300);
+    display:none;
+  }
+  .result-card.show{display:block;}
+  .result-card .result-headline{font-size:.85rem; font-weight:700; color:var(--teal-700); margin-bottom:4px;}
+  .result-card .result-number{font-size:2.2rem; font-weight:800; color:var(--teal-900); line-height:1.2;}
+  .result-card .result-unit{font-size:1rem; font-weight:600; color:var(--ink-soft); margin-left:6px;}
+  .result-card .result-sub{font-size:.85rem; color:var(--ink-soft); margin-top:8px;}
+  .result-rows{margin-top:16px; display:grid; gap:10px;}
+  .result-row{display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:#fff; border-radius:10px; border:1px solid var(--line);}
+  .result-row .rlabel{font-size:.86rem; color:var(--ink); font-weight:600;}
+  .result-row .rvalue{font-size:.95rem; color:var(--teal-900); font-weight:800;}
+  .result-row.active{border-color:var(--teal-500); background:var(--teal-100);}
+  .bar-row{margin-top:10px;}
+  .bar-track{height:10px; background:var(--teal-100); border-radius:6px; overflow:hidden; display:flex;}
+  .bar-seg{height:100%;}
+
+  .note-block{margin-top:22px; font-size:.82rem; color:var(--ink-soft); line-height:1.8; background:var(--bg-mist); border-radius:10px; padding:16px 18px;}
+  .note-block strong{color:var(--teal-900);}
+
+  .tools-hub-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:8px;}
+  .tool-hub-card{
+    display:flex; gap:14px; align-items:flex-start; background:#fff; border:1px solid var(--line);
+    border-radius:var(--radius-md); padding:22px; transition:.2s;
+  }
+  .tool-hub-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-soft); border-color:var(--teal-300);}
+  .tool-hub-card .ico{
+    width:42px; height:42px; border-radius:10px; background:var(--teal-100); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .tool-hub-card h3{font-size:1.02rem; font-weight:800; color:var(--teal-900); margin-bottom:6px;}
+  .tool-hub-card p{font-size:.85rem; color:var(--ink-soft); line-height:1.6;}
+
+  @media (max-width:640px){
+    .calc-grid{grid-template-columns:1fr;}
+    .calc-card{padding:22px 20px 20px;}
+    .tools-hub-grid{grid-template-columns:1fr;}
+    .result-card{padding:20px 20px;}
+  }
 </style>
+
 </head>
 <body>
 <header>
@@ -157,49 +234,43 @@
 </div>
 
 <main class="article">
-  <div class="article-hero">
-    <p class="eyebrow">Our Story</p>
-    <h1>品牌故事</h1>
-    <p class="meta">思迈威 SMART WELLNESS · 你的智慧健康向导</p>
+  <div class="tool-hero">
+    <p class="eyebrow">Progress Tracking</p>
+    <h1>追踪工具</h1>
+    <p>用对方法记录训练和身体变化，才能真正看到进步。这里提供简单实用的追踪思路。</p>
   </div>
-  <div class="article-body">
-    <h2>品牌定位</h2>
-    <p class="lead">源自美国佛罗里达的科学健康品牌，致力于传播科学运动理念，通过免费的健康教育、专业的运动装备与科学营养方案，帮助每一个普通人建立终身受益的健康生活方式。</p>
-    <h2>品牌故事</h2>
-    <p>品牌诞生于美国佛罗里达（Florida, USA）。</p>
-    <p>这里拥有成熟的运动文化与先进的运动科学理念，科学训练、合理营养和长期坚持，早已成为健康生活的重要组成部分。</p>
-    <p>品牌创始人长期生活于美国，深入接触欧美运动科学体系，也看到了科学知识如何真正帮助人们改善健康、提升生活品质。</p>
-    <p>与此同时，我们发现，许多人虽然愿意开始运动，却常常因为信息碎片化、训练方法错误、营养知识不足，以及产品选择困难，而无法坚持或取得理想效果。</p>
-    <p>正因如此，我们创立了 —— 思迈威 SMART WELLNESS。</p>
-    <p>我们希望把欧美成熟的运动科学理念，与东方用户的实际需求相结合，让专业知识变得简单，让科学运动走进更多人的生活。</p>
-    <p>因此，我们持续提供免费的运动课程、训练知识、营养教育和健康科普，同时打造值得信赖的运动装备与健康产品，让知识与实践相结合，帮助更多人真正享受科学运动带来的改变。</p>
-    <p>我们相信，真正改变健康的，不是一件产品，而是科学的方法，以及长期坚持的习惯。</p>
-    <h2>我们的使命 Mission</h2>
-    <p>推动科学运动普及，让每个人都能免费学习正确的运动知识，并通过专业的训练、科学的营养与优质的产品，建立终身受益的健康生活方式。</p>
-    <h2>我们的愿景 Vision</h2>
-    <p>成为全球值得信赖的科学健康品牌，连接运动科学、健康教育、营养管理与专业装备，让科学健康融入每个人的日常生活。</p>
-    <h2>品牌价值观 Values</h2>
-    <div class="value-grid">
-      <div class="value-card"><h4>科学 Science</h4><p>坚持以运动科学和营养学为基础，为用户提供专业、可信赖的健康解决方案。</p></div>
-      <div class="value-card"><h4>教育 Education</h4><p>持续分享免费的健康知识，让科学运动变得简单、易懂、人人可学。</p></div>
-      <div class="value-card center"><h4>品质 Quality</h4><p>坚持高标准，只提供安全、可靠、值得长期信赖的产品。</p></div>
-      <div class="value-card"><h4>长期 Long-term</h4><p>拒绝短期速成，坚持长期主义，相信持续的正确行动，才能带来真正的改变。</p></div>
-      <div class="value-card"><h4>共享 Community</h4><p>打造开放、积极、互助的健康社区，让更多人在学习、分享与陪伴中共同成长。</p></div>
+    <p class="lead">持续记录训练和身体变化，是科学健身中最容易被忽略、却最有效的一环。下面提供几种简单的追踪方式，帮你更清楚地看到自己的进步。</p>
+    <h2>训练日志：记录什么最有用</h2>
+    <p>每次训练后花 1 分钟记录，长期坚持能帮你清楚看到力量和耐力的进步：</p>
+    <ul>
+      <li>训练动作、组数与重量（例如：深蹲 3 组 x 10 次 x 40kg）</li>
+      <li>自我感觉强度（RPE，1-10 分）</li>
+      <li>训练时长与心率区间（可配合心率区间计算器使用）</li>
+      <li>身体感受：睡眠、精神状态、是否有不适</li>
+    </ul>
+    <h2>身体数据：多久测量一次比较合适</h2>
+    <div class="result-rows" style="margin-top:10px; margin-bottom:8px;">
+<div class="result-row"><span class="rlabel">体重</span><span class="rvalue" style="font-weight:600; text-align:right; max-width:65%;">建议每周固定 1-2 次，同一时间段测量（如晨起空腹）</span></div>
+<div class="result-row"><span class="rlabel">围度（腰、臀、臂围等）</span><span class="rvalue" style="font-weight:600; text-align:right; max-width:65%;">建议每 2-4 周测量一次，变化更能反映体型趋势</span></div>
+<div class="result-row"><span class="rlabel">体脂率</span><span class="rvalue" style="font-weight:600; text-align:right; max-width:65%;">如有条件，建议每 4 周测量一次，避免频繁测量造成心理波动</span></div>
+<div class="result-row"><span class="rlabel">体能表现</span><span class="rvalue" style="font-weight:600; text-align:right; max-width:65%;">记录关键动作的重量或耐力表现，每 4-6 周回顾一次进步</span></div>
     </div>
-    <h2>品牌宣言</h2>
-    <div class="manifesto"><p>我们的目标，从来不是创造更多产品。<br>而是帮助更多人建立科学、健康、可持续的生活方式。<br>我们相信，当正确的知识被更多人看见，健康就不再属于少数人，而能够走进每一个家庭。<br>因此，我们坚持免费传播科学运动知识，持续分享训练、营养与健康教育，并打造值得信赖的运动装备与健康产品，让科学真正融入每一天的生活。<br>因为真正改变人生的，不是一件产品，而是一种长期坚持的科学习惯。<br>让科学引领运动，让健康陪伴一生。</p></div>
-    <h2>联系我们</h2>
-    <div class="article-contact">
-      <p>品牌名称：思迈威 SMART WELLNESS</p>
-      <p>官方网站：<a href="https://www.smartwellness.com.cn">www.smartwellness.com.cn</a></p>
-    </div>
-    <div class="brand-tagline">
-      <div class="cn">思迈威 SMART WELLNESS</div>
-      <div class="zh-sub">你的智慧健康向导</div>
-      <div class="en">Your Smart Wellness Guide</div>
-    </div>
+    <h2>饮食追踪：不需要过度精细</h2>
+    <p>配合卡路里计算器与三大营养素计算器，估算出每日目标后，记录饮食时可以关注：</p>
+    <ul>
+      <li>每餐大致的热量与蛋白质来源，不需要精确到克</li>
+      <li>是否达到当日蛋白质目标（可参考蛋白质计算器结果）</li>
+      <li>整体饮食是否规律，而非追求每天完全一致</li>
+    </ul>
+    <h2>每周回顾：把数据变成行动</h2>
+    <p>建议每周花 5-10 分钟回顾一次训练日志和身体数据，问自己三个问题：</p>
+    <ul>
+      <li>这周的训练强度和恢复情况是否匹配？</li>
+      <li>体重 / 围度 / 体能表现是否朝目标方向变化？</li>
+      <li>下周需要调整训练强度、饮食还是恢复安排？</li>
+    </ul>
+    <p>长期、规律的追踪，比追求短期剧烈变化更能带来真正可持续的进步。</p>
 
-  </div>
 </main>
 <footer>
   <div class="footer-top">
