@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>追踪工具 | 思迈威 Smart Wellness</title>
-<meta name="description" content="思迈威 Smart Wellness 提供的训练与身体数据追踪指南，帮你科学记录训练日志、身体数据和饮食情况。">
+<meta name="description" content="思迈威 Smart Wellness 免费训练与身体数据追踪工具，记录每次训练自动估算消耗卡路里，并追踪体重围度变化。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 24'%3E%3Cpath d='M1 14C4 8 7 8 10 14C13 20 16 20 19 14C22 8 25 8 28 14' stroke='%232fae9e' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M10 8C13 13 16 13 19 8C22 3 25 3 28 8' stroke='%230f3d3e' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -237,39 +237,111 @@
   <div class="tool-hero">
     <p class="eyebrow">Progress Tracking</p>
     <h1>追踪工具</h1>
-    <p>用对方法记录训练和身体变化，才能真正看到进步。这里提供简单实用的追踪思路。</p>
+    <p>记录每一次训练和身体数据，自动帮你估算消耗、追踪变化趋势 —— 数据保存在你的浏览器本地。</p>
   </div>
-    <p class="lead">持续记录训练和身体变化，是科学健身中最容易被忽略、却最有效的一环。下面提供几种简单的追踪方式，帮你更清楚地看到自己的进步。</p>
-    <h2>训练日志：记录什么最有用</h2>
-    <p>每次训练后花 1 分钟记录，长期坚持能帮你清楚看到力量和耐力的进步：</p>
-    <ul>
-      <li>训练动作、组数与重量（例如：深蹲 3 组 x 10 次 x 40kg）</li>
-      <li>自我感觉强度（RPE，1-10 分）</li>
-      <li>训练时长与心率区间（可配合心率区间计算器使用）</li>
-      <li>身体感受：睡眠、精神状态、是否有不适</li>
-    </ul>
-    <h2>身体数据：多久测量一次比较合适</h2>
-    <div class="result-rows" style="margin-top:10px; margin-bottom:8px;">
-<div class="result-row"><span class="rlabel">体重</span><span class="rvalue" style="font-weight:600; text-align:right; max-width:65%;">建议每周固定 1-2 次，同一时间段测量（如晨起空腹）</span></div>
-<div class="result-row"><span class="rlabel">围度（腰、臀、臂围等）</span><span class="rvalue" style="font-weight:600; text-align:right; max-width:65%;">建议每 2-4 周测量一次，变化更能反映体型趋势</span></div>
-<div class="result-row"><span class="rlabel">体脂率</span><span class="rvalue" style="font-weight:600; text-align:right; max-width:65%;">如有条件，建议每 4 周测量一次，避免频繁测量造成心理波动</span></div>
-<div class="result-row"><span class="rlabel">体能表现</span><span class="rvalue" style="font-weight:600; text-align:right; max-width:65%;">记录关键动作的重量或耐力表现，每 4-6 周回顾一次进步</span></div>
+
+  <div class="calc-card">
+    <h2 style="font-size:1.05rem; font-weight:800; color:var(--teal-900); margin-bottom:4px;">第一步：设置你的体重</h2>
+    <p style="font-size:.82rem; color:var(--ink-soft); margin-bottom:14px;">用于估算训练消耗的卡路里，之后可以随时更新。</p>
+    <div class="calc-grid">
+      <div class="field">
+        <label for="profileWeight">当前体重</label>
+        <input type="number" id="profileWeight" min="30" max="200" placeholder="公斤 kg">
+      </div>
+      <div class="field" style="justify-content:flex-end;">
+        <button class="calc-btn" style="margin-top:0;" onclick="saveProfile()">保存体重</button>
+      </div>
     </div>
-    <h2>饮食追踪：不需要过度精细</h2>
-    <p>配合卡路里计算器与三大营养素计算器，估算出每日目标后，记录饮食时可以关注：</p>
-    <ul>
-      <li>每餐大致的热量与蛋白质来源，不需要精确到克</li>
-      <li>是否达到当日蛋白质目标（可参考蛋白质计算器结果）</li>
-      <li>整体饮食是否规律，而非追求每天完全一致</li>
-    </ul>
-    <h2>每周回顾：把数据变成行动</h2>
-    <p>建议每周花 5-10 分钟回顾一次训练日志和身体数据，问自己三个问题：</p>
-    <ul>
-      <li>这周的训练强度和恢复情况是否匹配？</li>
-      <li>体重 / 围度 / 体能表现是否朝目标方向变化？</li>
-      <li>下周需要调整训练强度、饮食还是恢复安排？</li>
-    </ul>
-    <p>长期、规律的追踪，比追求短期剧烈变化更能带来真正可持续的进步。</p>
+  </div>
+
+  <div class="calc-card" style="margin-top:24px;">
+    <h2 style="font-size:1.05rem; font-weight:800; color:var(--teal-900); margin-bottom:4px;">训练记录</h2>
+    <p style="font-size:.82rem; color:var(--ink-soft); margin-bottom:14px;">记录每一次训练，自动帮你估算消耗的卡路里。</p>
+    <div class="calc-grid">
+      <div class="field">
+        <label for="wDate">训练日期</label>
+        <input type="date" id="wDate">
+      </div>
+      <div class="field">
+        <label for="wType">训练类型</label>
+        <select id="wType">
+          <option value="5">力量训练</option>
+          <option value="7">有氧训练（跑步 / 骑行）</option>
+          <option value="8">HIIT 间歇训练</option>
+          <option value="3">瑜伽 / 拉伸</option>
+          <option value="4">其他运动</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="wDuration">训练时长</label>
+        <input type="number" id="wDuration" min="1" max="600" placeholder="分钟">
+      </div>
+      <div class="field">
+        <label for="wIntensity">强度感受</label>
+        <select id="wIntensity">
+          <option value="0.8">较轻松</option>
+          <option value="1" selected>中等</option>
+          <option value="1.2">较吃力</option>
+        </select>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="addWorkoutLog()">记录本次训练</button>
+
+    <div class="result-rows" style="margin-top:22px;">
+      <div class="result-row active"><span class="rlabel">本周累计消耗</span><span class="rvalue" id="weekCal">0 kcal</span></div>
+      <div class="result-row"><span class="rlabel">本月累计消耗</span><span class="rvalue" id="monthCal">0 kcal</span></div>
+    </div>
+
+    <div id="workoutList" style="margin-top:18px;"></div>
+    <p id="workoutEmpty" style="font-size:.84rem; color:var(--ink-soft); margin-top:12px;">还没有训练记录，添加第一条试试吧。</p>
+
+    <div class="note-block">
+      <strong>计算方式说明：</strong>消耗热量按 MET 值估算公式：消耗(kcal) ≈ MET × 体重(kg) × 时长(小时) × 强度系数。数值为常见运动类型的通用估算，仅供参考。
+    </div>
+  </div>
+
+  <div class="calc-card" style="margin-top:24px;">
+    <h2 style="font-size:1.05rem; font-weight:800; color:var(--teal-900); margin-bottom:4px;">身体数据记录</h2>
+    <p style="font-size:.82rem; color:var(--ink-soft); margin-bottom:14px;">定期记录体重、围度等数据，追踪身体变化趋势。</p>
+    <div class="calc-grid">
+      <div class="field">
+        <label for="bDate">测量日期</label>
+        <input type="date" id="bDate">
+      </div>
+      <div class="field">
+        <label for="bWeight">体重<span class="hint">（选填）</span></label>
+        <input type="number" id="bWeight" step="0.1" placeholder="kg">
+      </div>
+      <div class="field">
+        <label for="bWaist">腰围<span class="hint">（选填）</span></label>
+        <input type="number" id="bWaist" step="0.1" placeholder="cm">
+      </div>
+      <div class="field">
+        <label for="bHip">臀围<span class="hint">（选填）</span></label>
+        <input type="number" id="bHip" step="0.1" placeholder="cm">
+      </div>
+      <div class="field">
+        <label for="bArm">臂围<span class="hint">（选填）</span></label>
+        <input type="number" id="bArm" step="0.1" placeholder="cm">
+      </div>
+      <div class="field">
+        <label for="bFat">体脂率<span class="hint">（选填）</span></label>
+        <input type="number" id="bFat" step="0.1" placeholder="%">
+      </div>
+    </div>
+    <button class="calc-btn" onclick="addBodyLog()">记录本次数据</button>
+
+    <div id="bodyList" style="margin-top:22px;"></div>
+    <p id="bodyEmpty" style="font-size:.84rem; color:var(--ink-soft); margin-top:12px;">还没有身体数据记录，添加第一条试试吧。</p>
+
+    <div class="note-block">
+      <strong>小提醒：</strong>体重建议固定在同一时间段测量（如晨起空腹），围度建议每 2-4 周测量一次，避免因短期波动产生不必要的心理压力。
+    </div>
+  </div>
+
+  <div class="note-block" style="margin-top:24px;">
+    <strong>关于数据存储：</strong>你的训练和身体数据只保存在<strong>当前浏览器本地</strong>，不会上传到服务器，也不会在其他设备或浏览器间同步。清除浏览器数据会导致记录丢失，如需长期保存，建议定期截图或手动备份重要数据。
+  </div>
 
 </main>
 <footer>
@@ -320,6 +392,170 @@
     const open = mobileMenu.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
+</script>
+<script>
+const LS_PROFILE = 'sw_profile';
+const LS_WORKOUTS = 'sw_workout_logs';
+const LS_BODY = 'sw_body_logs';
+
+function todayStr(){
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+
+function loadProfile(){
+  try{
+    const p = JSON.parse(localStorage.getItem(LS_PROFILE) || '{}');
+    if(p.weight){ document.getElementById('profileWeight').value = p.weight; }
+  }catch(e){}
+}
+function saveProfile(){
+  const weight = parseFloat(document.getElementById('profileWeight').value) || 0;
+  if(weight <= 0){ alert('请填写体重'); return; }
+  localStorage.setItem(LS_PROFILE, JSON.stringify({weight: weight}));
+  alert('体重已保存，之后训练记录会用它来估算消耗。');
+  renderWorkouts();
+}
+function getProfileWeight(){
+  try{
+    const p = JSON.parse(localStorage.getItem(LS_PROFILE) || '{}');
+    return p.weight || 0;
+  }catch(e){ return 0; }
+}
+
+function loadArr(key){
+  try{ return JSON.parse(localStorage.getItem(key) || '[]'); }catch(e){ return []; }
+}
+function saveArr(key, arr){
+  localStorage.setItem(key, JSON.stringify(arr));
+}
+
+function addWorkoutLog(){
+  const date = document.getElementById('wDate').value || todayStr();
+  const met = parseFloat(document.getElementById('wType').value);
+  const typeName = document.getElementById('wType').options[document.getElementById('wType').selectedIndex].text;
+  const duration = parseFloat(document.getElementById('wDuration').value) || 0;
+  const intensity = parseFloat(document.getElementById('wIntensity').value);
+  const weight = getProfileWeight();
+
+  if(duration <= 0){ alert('请填写训练时长'); return; }
+  if(weight <= 0){ alert('请先在上方设置你的体重，才能估算消耗'); return; }
+
+  const calories = met * weight * (duration/60) * intensity;
+
+  const logs = loadArr(LS_WORKOUTS);
+  logs.unshift({date: date, type: typeName, duration: duration, calories: Math.round(calories)});
+  saveArr(LS_WORKOUTS, logs);
+
+  document.getElementById('wDuration').value = '';
+  renderWorkouts();
+}
+
+function deleteWorkout(idx){
+  const logs = loadArr(LS_WORKOUTS);
+  logs.splice(idx, 1);
+  saveArr(LS_WORKOUTS, logs);
+  renderWorkouts();
+}
+
+function renderWorkouts(){
+  const logs = loadArr(LS_WORKOUTS);
+  const listEl = document.getElementById('workoutList');
+  const emptyEl = document.getElementById('workoutEmpty');
+  listEl.innerHTML = '';
+
+  if(logs.length === 0){
+    emptyEl.style.display = 'block';
+  } else {
+    emptyEl.style.display = 'none';
+    logs.forEach(function(log, idx){
+      const row = document.createElement('div');
+      row.className = 'result-row';
+      row.style.marginBottom = '8px';
+      row.innerHTML = '<span class="rlabel">' + log.date + ' · ' + log.type + ' · ' + log.duration + ' 分钟</span>' +
+        '<span style="display:flex; align-items:center; gap:12px;"><span class="rvalue">' + log.calories + ' kcal</span>' +
+        '<button onclick="deleteWorkout(' + idx + ')" style="border:none; background:none; color:var(--ink-soft); cursor:pointer; font-size:.8rem;">删除</button></span>';
+      listEl.appendChild(row);
+    });
+  }
+
+  const now = new Date();
+  const weekAgo = new Date(now); weekAgo.setDate(now.getDate()-7);
+  const monthAgo = new Date(now); monthAgo.setDate(now.getDate()-30);
+
+  let weekTotal = 0, monthTotal = 0;
+  logs.forEach(function(log){
+    const d = new Date(log.date);
+    if(d >= weekAgo) weekTotal += log.calories;
+    if(d >= monthAgo) monthTotal += log.calories;
+  });
+  document.getElementById('weekCal').textContent = Math.round(weekTotal) + ' kcal';
+  document.getElementById('monthCal').textContent = Math.round(monthTotal) + ' kcal';
+}
+
+function addBodyLog(){
+  const date = document.getElementById('bDate').value || todayStr();
+  const weight = document.getElementById('bWeight').value;
+  const waist = document.getElementById('bWaist').value;
+  const hip = document.getElementById('bHip').value;
+  const arm = document.getElementById('bArm').value;
+  const fat = document.getElementById('bFat').value;
+
+  if(!weight && !waist && !hip && !arm && !fat){
+    alert('请至少填写一项数据');
+    return;
+  }
+
+  const logs = loadArr(LS_BODY);
+  logs.unshift({date: date, weight: weight, waist: waist, hip: hip, arm: arm, fat: fat});
+  saveArr(LS_BODY, logs);
+
+  ['bWeight','bWaist','bHip','bArm','bFat'].forEach(function(id){ document.getElementById(id).value=''; });
+  renderBody();
+}
+
+function deleteBody(idx){
+  const logs = loadArr(LS_BODY);
+  logs.splice(idx, 1);
+  saveArr(LS_BODY, logs);
+  renderBody();
+}
+
+function renderBody(){
+  const logs = loadArr(LS_BODY);
+  const listEl = document.getElementById('bodyList');
+  const emptyEl = document.getElementById('bodyEmpty');
+  listEl.innerHTML = '';
+
+  if(logs.length === 0){
+    emptyEl.style.display = 'block';
+    return;
+  }
+  emptyEl.style.display = 'none';
+
+  logs.forEach(function(log, idx){
+    const parts = [];
+    if(log.weight) parts.push('体重 ' + log.weight + 'kg');
+    if(log.waist) parts.push('腰围 ' + log.waist + 'cm');
+    if(log.hip) parts.push('臀围 ' + log.hip + 'cm');
+    if(log.arm) parts.push('臂围 ' + log.arm + 'cm');
+    if(log.fat) parts.push('体脂 ' + log.fat + '%');
+
+    const row = document.createElement('div');
+    row.className = 'result-row';
+    row.style.marginBottom = '8px';
+    row.innerHTML = '<span class="rlabel">' + log.date + '</span>' +
+      '<span style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:flex-end;"><span class="rvalue" style="font-weight:600; font-size:.82rem;">' + parts.join(' · ') + '</span>' +
+      '<button onclick="deleteBody(' + idx + ')" style="border:none; background:none; color:var(--ink-soft); cursor:pointer; font-size:.8rem;">删除</button></span>';
+    listEl.appendChild(row);
+  });
+}
+
+document.getElementById('wDate').value = todayStr();
+document.getElementById('bDate').value = todayStr();
+loadProfile();
+renderWorkouts();
+renderBody();
 </script>
 
 </body>
