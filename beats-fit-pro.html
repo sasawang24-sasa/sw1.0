@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>健康免责声明 | 思迈威 Smart Wellness</title>
-<meta name="description" content="思迈威 Smart Wellness 健康免责声明，说明我们的课程与内容不构成医疗建议。">
+<title>Beats Fit Pro 测评 | 思迈威 Smart Wellness</title>
+<meta name="description" content="Beats Fit Pro 深度测评 —— 思迈威 Smart Wellness 耳机装备推荐。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 24'%3E%3Cpath d='M1 14C4 8 7 8 10 14C13 20 16 20 19 14C22 8 25 8 28 14' stroke='%232fae9e' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M10 8C13 13 16 13 19 8C22 3 25 3 28 8' stroke='%230f3d3e' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -122,7 +122,84 @@
     .footer-top{grid-template-columns:1fr 1fr; gap:28px 16px;}
     .footer-bottom{flex-direction:column; align-items:flex-start;}
   }
+
+  /* calculator-specific */
+  .tool-hero{margin-bottom:36px; padding-bottom:26px; border-bottom:1px solid var(--line);}
+  .tool-hero .eyebrow{font-size:.78rem; font-weight:700; letter-spacing:.06em; color:var(--teal-500); text-transform:uppercase; margin-bottom:10px;}
+  .tool-hero h1{font-size:1.9rem; font-weight:800; color:var(--teal-900); letter-spacing:-0.01em; margin-bottom:10px; line-height:1.3;}
+  .tool-hero p{font-size:.95rem; color:var(--ink-soft); line-height:1.75; max-width:600px;}
+
+  .calc-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:30px 30px 26px; box-shadow:var(--shadow-soft);}
+  .calc-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px 16px;}
+  .field{display:flex; flex-direction:column; gap:6px;}
+  .field.full{grid-column:1 / -1;}
+  .field label{font-size:.82rem; font-weight:700; color:var(--teal-900);}
+  .field .hint{font-size:.74rem; color:var(--ink-soft); font-weight:400; margin-top:-2px;}
+  .field input, .field select{
+    border:1px solid var(--line); border-radius:10px; padding:11px 14px;
+    font-size:.92rem; font-family:inherit; color:var(--ink); background:#fbfdfc;
+    outline:none; transition:.2s;
+  }
+  .field input:focus, .field select:focus{border-color:var(--teal-500); background:#fff;}
+  .radio-group{display:flex; gap:8px; flex-wrap:wrap;}
+  .radio-group label{
+    display:flex; align-items:center; gap:6px; font-size:.86rem; font-weight:600; color:var(--ink);
+    border:1px solid var(--line); border-radius:100px; padding:8px 16px; cursor:pointer; transition:.2s;
+  }
+  .radio-group input{accent-color:var(--teal-500); margin:0;}
+  .radio-group label:has(input:checked){background:var(--teal-100); border-color:var(--teal-500); color:var(--teal-900);}
+
+  .calc-btn{
+    margin-top:24px; width:100%; padding:14px; border:none; border-radius:100px;
+    background:var(--teal-500); color:#fff; font-size:.98rem; font-weight:700;
+    cursor:pointer; transition:.2s;
+  }
+  .calc-btn:hover{background:var(--teal-700);}
+
+  .result-card{
+    margin-top:22px; padding:26px 28px; border-radius:var(--radius-md);
+    background:linear-gradient(160deg, var(--teal-100), #fff);
+    border:1px solid var(--teal-300);
+    display:none;
+  }
+  .result-card.show{display:block;}
+  .result-card .result-headline{font-size:.85rem; font-weight:700; color:var(--teal-700); margin-bottom:4px;}
+  .result-card .result-number{font-size:2.2rem; font-weight:800; color:var(--teal-900); line-height:1.2;}
+  .result-card .result-unit{font-size:1rem; font-weight:600; color:var(--ink-soft); margin-left:6px;}
+  .result-card .result-sub{font-size:.85rem; color:var(--ink-soft); margin-top:8px;}
+  .result-rows{margin-top:16px; display:grid; gap:10px;}
+  .result-row{display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:#fff; border-radius:10px; border:1px solid var(--line);}
+  .result-row .rlabel{font-size:.86rem; color:var(--ink); font-weight:600;}
+  .result-row .rvalue{font-size:.95rem; color:var(--teal-900); font-weight:800;}
+  .result-row.active{border-color:var(--teal-500); background:var(--teal-100);}
+  .bar-row{margin-top:10px;}
+  .bar-track{height:10px; background:var(--teal-100); border-radius:6px; overflow:hidden; display:flex;}
+  .bar-seg{height:100%;}
+
+  .note-block{margin-top:22px; font-size:.82rem; color:var(--ink-soft); line-height:1.8; background:var(--bg-mist); border-radius:10px; padding:16px 18px;}
+  .note-block strong{color:var(--teal-900);}
+
+  .tools-hub-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:8px;}
+  .tool-hub-card{
+    display:flex; gap:14px; align-items:flex-start; background:#fff; border:1px solid var(--line);
+    border-radius:var(--radius-md); padding:22px; transition:.2s;
+  }
+  .tool-hub-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-soft); border-color:var(--teal-300);}
+  .tool-hub-card .ico{
+    width:42px; height:42px; border-radius:10px; background:var(--teal-100); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .tool-hub-card h3{font-size:1.02rem; font-weight:800; color:var(--teal-900); margin-bottom:6px;}
+  .tool-hub-card p{font-size:.85rem; color:var(--ink-soft); line-height:1.6;}
+
+  @media (max-width:640px){
+    .calc-grid{grid-template-columns:1fr;}
+    .calc-card{padding:22px 20px 20px;}
+    .tools-hub-grid{grid-template-columns:1fr;}
+    .result-card{padding:20px 20px;}
+  }
 </style>
+
 </head>
 <body>
 <header>
@@ -157,79 +234,39 @@
 </div>
 
 <main class="article">
-  <div class="article-hero">
-    <p class="eyebrow">Health Disclaimer</p>
-    <h1>健康免责声明</h1>
-    <p class="meta">生效日期：2026年08月01日</p>
+  <div class="tool-hero">
+    <p class="eyebrow">耳机 · 装备测评</p>
+    <h1>Beats Fit Pro 测评</h1>
+    <p></p>
   </div>
   <div class="article-body">
-    <p class="lead">思迈威 SMART WELLNESS 致力于传播科学运动理念，提供运动知识、训练课程、营养建议及相关健康内容，帮助用户建立更健康的生活方式。</p>
-    <p class="lead">在使用 思迈威 SMART WELLNESS 提供的任何内容、课程或产品前，请您阅读并理解以下免责声明。</p>
-    <h2>一、关于运动指导</h2>
-    <p>思迈威 SMART WELLNESS 提供的运动课程、训练建议和健康内容，旨在帮助用户了解科学运动方法，提高运动意识，培养健康生活习惯。相关内容属于：</p>
-    <ul>
-      <li>健康教育信息</li>
-      <li>运动知识分享</li>
-      <li>一般性训练建议</li>
-    </ul>
-    <p>不构成医疗建议、诊断、治疗方案或康复服务。</p>
-    <p>每个人的身体状况、运动能力和健康基础不同，实际训练效果可能因个人情况而有所差异。</p>
-    <h2>二、运动风险提示</h2>
-    <p>运动具有一定风险。在开始任何新的运动计划前，建议您根据自身健康状况合理评估运动强度。</p>
-    <p>如您存在以下情况：</p>
-    <ul>
-      <li>心血管疾病</li>
-      <li>骨骼或关节问题</li>
-      <li>慢性疾病</li>
-      <li>近期受伤</li>
-      <li>其他可能影响运动安全的健康问题</li>
-    </ul>
-    <p>建议在专业医生或相关专业人士指导下进行运动。</p>
-    <p>运动过程中，如出现：</p>
-    <ul>
-      <li>胸痛</li>
-      <li>呼吸困难</li>
-      <li>头晕</li>
-      <li>明显疼痛</li>
-      <li>身体异常不适</li>
-    </ul>
-    <p>请立即停止运动，并根据情况寻求专业帮助。</p>
-    <h2>三、关于营养建议</h2>
-    <p>思迈威 SMART WELLNESS 提供的营养内容旨在帮助用户了解健康饮食理念和科学营养知识。相关内容：</p>
-    <ul>
-      <li>不替代医生、营养师或其他专业医疗人员的建议</li>
-      <li>不用于诊断、治疗或预防任何疾病</li>
-      <li>不保证特定减重、增肌或身体变化效果</li>
-    </ul>
-    <p>每个人的身体状况、代谢水平、生活环境和饮食习惯不同，实际效果可能存在差异。</p>
-    <h2>四、关于产品使用</h2>
-    <p>思迈威 SMART WELLNESS 提供的运动装备、训练用品及健康相关产品，旨在辅助用户进行科学运动和健康生活。用户应：</p>
-    <ul>
-      <li>按照产品说明正确使用</li>
-      <li>根据自身能力选择适合的训练方式</li>
-      <li>避免超出自身承受范围使用产品</li>
-    </ul>
-    <p>因错误使用、过度训练或忽视自身身体状况导致的损伤，用户应自行承担相应责任。</p>
-    <h2>五、关于用户个人责任</h2>
-    <p>用户应根据自身情况合理判断是否适合参与相关运动。思迈威 SMART WELLNESS 鼓励科学、安全、长期的运动方式，不提倡：</p>
-    <ul>
-      <li>极端节食</li>
-      <li>过度训练</li>
-      <li>不科学的快速减重方法</li>
-      <li>忽视身体信号的训练行为</li>
-    </ul>
-    <p>健康改变需要时间，持续的正确行动比短期效果更加重要。</p>
-    <h2>六、内容更新</h2>
-    <p>思迈威 SMART WELLNESS 可能根据运动科学发展、用户反馈及业务需求更新相关课程和健康内容。</p>
-    <p>我们将持续努力提供准确、可靠、有价值的信息，但无法保证所有内容适用于每一位用户。</p>
-    <h2>七、接受本声明</h2>
-    <p>当您访问 思迈威 SMART WELLNESS 网站、使用课程服务、购买产品或参与相关活动时，即表示您已阅读、理解并同意本健康免责声明。</p>
-    <div class="article-contact">
-      <p>品牌名称：思迈威 SMART WELLNESS</p>
-      <p>官方网站：<a href="https://www.smartwellness.com.cn">www.smartwellness.com.cn</a></p>
+  <div class="calc-card" style="margin-bottom:28px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:6px;">
+      <span class="tag">耳机</span>
+      <span style="color:#f5a623; font-weight:700;">★★★★½ <span style="color:var(--ink-soft); font-weight:600; font-size:.85rem;">4.6</span></span>
     </div>
-
+    <p style="font-size:.92rem; color:var(--ink-soft); margin-bottom:0;">最佳运动耳机 —— 稳固佩戴设计，主动降噪与音质在运动场景中表现出色。</p>
   </div>
+  <div class="calc-grid" style="margin-bottom:8px;">
+    <div class="field full" style="background:var(--teal-100); border-radius:var(--radius-md); padding:18px 20px;">
+      <label style="margin-bottom:8px;">优点</label>
+      <ul style="margin:0;"><li>翼形耳塞设计，剧烈运动中佩戴稳固，不易脱落</li><li>主动降噪效果好，适合户外跑步或健身房环境使用</li><li>支持无线快充，充电 5 分钟可用约 1 小时</li><li>IPX4 防汗防水，适合高强度训练场景</li></ul>
+    </div>
+    <div class="field full" style="background:var(--bg-mist); border-radius:var(--radius-md); padding:18px 20px; margin-top:12px;">
+      <label style="margin-bottom:8px;">缺点</label>
+      <ul style="margin:0;"><li>相比同价位纯运动耳机，续航时间中规中矩</li><li>降噪模式下低频音质略显厚重，音质偏好因人而异</li><li>耳塞尺寸需要多次尝试才能找到最贴合的一款</li></ul>
+    </div>
+  </div>
+    <h2>适合谁</h2>
+    <p>适合经常进行跑步、力量训练或团课等运动场景，且看重佩戴稳固性和降噪体验的用户。</p>
+    <h2>佩戴与稳固性</h2>
+    <p>翼形耳塞设计是这款耳机的核心亮点——在跳跃、快速转身等动作中，耳机依然能保持稳固，这对于 HIIT 或团课这类高强度训练尤其重要。</p>
+    <h2>音质与降噪表现</h2>
+    <p>主动降噪模式下，能有效隔绝健身房环境噪音，适合需要专注训练的场景；透明模式则适合户外跑步时保留一定环境感知，兼顾安全性。</p>
+    <h2>购买建议</h2>
+    <p>如果你的训练场景以力量训练、HIIT 或团课为主，佩戴稳固性是首要考量，这款耳机是很扎实的选择；如果你更看重长续航（比如长距离跑步或骑行），可以额外对比其他专为耐力运动设计的产品。</p>
+  </div>
+
 </main>
 <footer>
   <div class="footer-top">
