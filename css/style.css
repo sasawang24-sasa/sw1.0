@@ -121,6 +121,17 @@
   .tool-hero p{font-size:.95rem; color:var(--ink-soft); line-height:1.75; max-width:600px;}
 
   .calc-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:30px 30px 26px; box-shadow:var(--shadow-soft);}
+  .calc-card + .calc-card{margin-top:0;}
+
+  /* category section headings (articles.html / gear.html grouped lists) */
+  .section-heading{
+    display:flex; align-items:center; gap:8px;
+    font-size:1.05rem; font-weight:800; color:var(--teal-900);
+    margin:40px 0 14px; scroll-margin-top:90px;
+  }
+  .section-heading:first-of-type{margin-top:0;}
+  .section-heading .count{font-size:.78rem; font-weight:600; color:var(--ink-soft);}
+  .empty-note{padding:20px; text-align:center; font-size:.85rem; color:var(--ink-soft); background:var(--bg-mist); border-radius:var(--radius-md); border:1px dashed var(--line);}
 
   /* list items inside calc-card (articles.html, gear.html, etc.) */
   .list-item{
