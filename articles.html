@@ -52,6 +52,13 @@
     <h1>全部文章</h1>
     <p>涵盖训练、营养、恢复等领域的深度指南，持续更新中。</p>
   </div>
+  <div class="filter-tabs" id="filterTabs">
+    <button type="button" data-filter="all">全部</button>
+    <button type="button" data-filter="training">训练</button>
+    <button type="button" data-filter="nutrition">营养</button>
+    <button type="button" data-filter="recovery">恢复</button>
+  </div>
+  <section class="cat-group" data-cat="training">
   <h2 class="section-heading" id="training">训练 Training <span class="count">(9)</span></h2>
   <div class="calc-card">
     <a class="list-item" href="zone2-training.html" style="text-decoration:none;">
@@ -127,6 +134,8 @@
       <span class="arrow">→</span>
     </a>
   </div>
+  </section>
+  <section class="cat-group" data-cat="nutrition">
   <h2 class="section-heading" id="nutrition">营养 Nutrition <span class="count">(2)</span></h2>
   <div class="calc-card">
     <a class="list-item" href="protein-needs.html" style="text-decoration:none;">
@@ -146,6 +155,8 @@
       <span class="arrow">→</span>
     </a>
   </div>
+  </section>
+  <section class="cat-group" data-cat="recovery">
   <h2 class="section-heading" id="recovery">恢复 Recovery <span class="count">(2)</span></h2>
   <div class="calc-card">
     <a class="list-item" href="sleep-quality.html" style="text-decoration:none;">
@@ -165,6 +176,7 @@
       <span class="arrow">→</span>
     </a>
   </div>
+  </section>
 
 </main>
 <footer>
@@ -213,6 +225,26 @@
     const open = mobileMenu.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
+
+  const VALID_CATS = ['training','nutrition','recovery'];
+  function applyFilter(cat){
+    document.querySelectorAll('.cat-group').forEach(function(g){
+      g.hidden = !(cat === 'all' || g.dataset.cat === cat);
+    });
+    document.querySelectorAll('#filterTabs button').forEach(function(b){
+      b.classList.toggle('active', b.dataset.filter === cat);
+    });
+  }
+  document.querySelectorAll('#filterTabs button').forEach(function(b){
+    b.addEventListener('click', function(){
+      const cat = b.dataset.filter;
+      applyFilter(cat);
+      const url = cat === 'all' ? location.pathname : location.pathname + '#' + cat;
+      history.replaceState(null, '', url);
+    });
+  });
+  const initialHash = location.hash.replace('#','');
+  applyFilter(VALID_CATS.includes(initialHash) ? initialHash : 'all');
 </script>
 
 </body>

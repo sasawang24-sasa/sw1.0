@@ -133,6 +133,16 @@
   .section-heading .count{font-size:.78rem; font-weight:600; color:var(--ink-soft);}
   .empty-note{padding:20px; text-align:center; font-size:.85rem; color:var(--ink-soft); background:var(--bg-mist); border-radius:var(--radius-md); border:1px dashed var(--line);}
 
+  /* category filter tabs */
+  .filter-tabs{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:32px;}
+  .filter-tabs button{
+    padding:9px 18px; border-radius:100px; border:1px solid var(--line); background:#fff;
+    font-size:.86rem; font-weight:600; color:var(--ink-soft); cursor:pointer; transition:.2s;
+  }
+  .filter-tabs button:hover{border-color:var(--teal-300); color:var(--teal-900);}
+  .filter-tabs button.active{background:var(--teal-500); border-color:var(--teal-500); color:#fff;}
+  .cat-group[hidden]{display:none;}
+
   /* list items inside calc-card (articles.html, gear.html, etc.) */
   .list-item{
     display:flex; gap:14px; align-items:flex-start;
